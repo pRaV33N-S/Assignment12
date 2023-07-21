@@ -57,28 +57,41 @@ namespace Assignment12
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the String");
-            string userInput = Console.ReadLine();
-            List<string> email = emailValidation(userInput);
-            List<string> number = numberValidation(userInput);
-            List<string> custom = customValidation(userInput);
-            Console.WriteLine("No of words in the sentence is "+count(userInput));
-            Console.WriteLine("The Mail Id's are :");
-            foreach (string mail in email)
+            try
             {
-                Console.WriteLine(mail);
+                Console.WriteLine("Enter the String");
+                string userInput = Console.ReadLine();
+                if (userInput.Length == 0)
+                {
+                    Console.WriteLine("It is an empty string");
+                    return;
+                }
+                List<string> email = emailValidation(userInput);
+                List<string> number = numberValidation(userInput);
+                List<string> custom = customValidation(userInput);
+                Console.WriteLine("No of words in the sentence is " + count(userInput));
+                Console.WriteLine("The Mail Id's are :");
+                foreach (string mail in email)
+                {
+                    Console.WriteLine("\t"+mail);
+                }
+                Console.WriteLine();
+                Console.WriteLine("The Numbers are :");
+                foreach (string num in number)
+                {
+                    Console.WriteLine("\t"+num);
+                }
+                Console.WriteLine();
+                Console.WriteLine("The Custom check result are :");
+                foreach (string cust in custom)
+                {
+                    Console.WriteLine("\t"+cust);
+                }
             }
-            Console.WriteLine("The Numbers are :");
-            foreach(string num in number)
+            catch(Exception ex)
             {
-                Console.WriteLine(num);
+                Console.WriteLine(ex.Message);
             }
-            Console.WriteLine("The Custom check result are :");
-            foreach (string cust in custom)
-            {
-                Console.WriteLine(cust);
-            }
-
         }
     }
 }
