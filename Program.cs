@@ -70,23 +70,35 @@ namespace Assignment12
                 List<string> number = numberValidation(userInput);
                 List<string> custom = customValidation(userInput);
                 Console.WriteLine("No of words in the sentence is " + count(userInput));
-                Console.WriteLine("The Mail Id's are :");
-                foreach (string mail in email)
-                {
-                    Console.WriteLine("\t"+mail);
-                }
                 Console.WriteLine();
-                Console.WriteLine("The Numbers are :");
-                foreach (string num in number)
+                if (email.Count != 0) 
                 {
-                    Console.WriteLine("\t"+num);
+                    Console.WriteLine("The Mail Id's are :");
+                    foreach (string mail in email)
+                    {
+                        Console.WriteLine("\t" + mail);
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
-                Console.WriteLine("The Custom check result are :");
-                foreach (string cust in custom)
+                if (number.Count != 0)
                 {
-                    Console.WriteLine("\t"+cust);
+                    Console.WriteLine("The Numbers are :");
+                    foreach (string num in number)
+                    {
+                        Console.WriteLine("\t" + num);
+                    }
+                    Console.WriteLine();
                 }
+                if (custom.Count != 0)
+                {
+
+                    Console.WriteLine("The Custom check result are :");
+                    foreach (string cust in custom)
+                    {
+                        Console.WriteLine("\t" + cust);
+                    }
+                }
+                Console.ReadKey();
             }
             catch(Exception ex)
             {
